@@ -10,6 +10,11 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   int counter = 0;
 
+  void increase() {
+    counter++;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     const fontSize30 = TextStyle(fontSize: 30);
@@ -34,45 +39,46 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       //floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              counter++;
+      floatingActionButton: CustomFloatingActions(increaseFn: increase),
+    );
+  }
+}
 
-              setState(() {});
-            },
-            elevation: 10.0,
-            child: Column(
-              children: const <Widget>[Icon(Icons.add), Icon(Icons.remove)],
-            ),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              counter++;
+class CustomFloatingActions extends StatelessWidget {
+  final Function increaseFn;
 
-              setState(() {});
-            },
-            elevation: 10.0,
-            child: Column(
-              children: const <Widget>[Icon(Icons.add), Icon(Icons.remove)],
-            ),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              counter++;
+  const CustomFloatingActions({
+    Key? key,
+    required this.increaseFn,
+  }) : super(key: key);
 
-              setState(() {});
-            },
-            elevation: 10.0,
-            child: Column(
-              children: const <Widget>[Icon(Icons.add), Icon(Icons.remove)],
-            ),
-          ),
-        ],
-      ),
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      //crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        FloatingActionButton(
+          onPressed: null,
+          elevation: 10.0,
+          child: Icon(Icons.remove),
+        ),
+        FloatingActionButton(
+          onPressed: null,
+          elevation: 10.0,
+          child: Icon(Icons.ad_units),
+        ),
+        FloatingActionButton(
+          onPressed: increaseFn(),
+          elevation: 10.0,
+          child: const Icon(Icons.add),
+        ),
+        FloatingActionButton(
+          onPressed: null,
+          elevation: 10.0,
+          child: const Icon(Icons.autorenew),
+        ),
+      ],
     );
   }
 }

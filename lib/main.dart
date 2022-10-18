@@ -1,5 +1,6 @@
 import 'dart:html';
 
+import 'package:contador/router/app_routes.dart';
 import 'package:contador/screens/listview1_screen.dart';
 import 'package:contador/screens/listview2_screen.dart';
 import 'package:contador/screens/card_screen.dart';
@@ -14,14 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Material App',
-        home: const CardScreen(),
-        routes: {
-          'listview1': (BuildContext context) => const ListView1Screen(),
-          'listview2': (BuildContext context) => const Listview2Screen(),
-          'alert': (BuildContext context) => const AlertScreen(),
-          'card': (BuildContext context) => const CardScreen(),
-        });
+      debugShowCheckedModeBanner: false,
+      title: 'Material App',
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
+      theme: ThemeData.light().copyWith(
+          primaryColor: Colors.indigo,
+          appBarTheme: const AppBarTheme(color: Colors.indigo, elevation: 0)),
+    );
   }
 }

@@ -18,7 +18,24 @@ class CardScreen extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          CustomCard2(),
+          CustomCard2(
+            name: 'Imagen 1',
+            imageUrl:
+                'https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg',
+          ),
+          SizedBox(height: 10),
+          CustomCard2(
+            imageUrl:
+                'https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg',
+            name: 'Imagen 2',
+          ),
+          SizedBox(height: 10),
+          CustomCard2(
+            imageUrl:
+                'https://upload.wikimedia.org/wikipedia/commons/3/35/Neckertal_20150527-6384.jpg',
+            name: 'Imagen 3',
+          ),
+          SizedBox(height: 100),
         ],
       ),
     );

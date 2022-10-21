@@ -1,3 +1,4 @@
+import 'package:contador/screens/screens.dart';
 import 'package:flutter/material.dart';
 import '../models/menu_option.dart';
 import '../screens/alert_screen.dart';
@@ -44,6 +45,11 @@ class AppRoutes {
         name: 'Animated Container',
         screen: const AnimatedScreen(),
         icon: Icons.play_circle_outline_rounded),
+    MenuOption(
+        route: 'input',
+        name: 'InputScreen',
+        screen: const InputScreen(),
+        icon: Icons.input_rounded),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

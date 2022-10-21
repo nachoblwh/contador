@@ -1,3 +1,4 @@
+export 'package:contador/screens/inputs_screen.dart';
 export 'package:contador/screens/alert_screen.dart';
 export 'package:contador/screens/animated_screen.dart';
 export 'package:contador/screens/avatar_screen.dart';

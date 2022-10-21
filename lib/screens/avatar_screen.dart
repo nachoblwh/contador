@@ -6,29 +6,23 @@ class AvatarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Stan lee'),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 5),
-            child: CircleAvatar(
-              backgroundColor: Colors.indigo[900],
-              child: const Text('SL'),
-            ),
-          )
-        ],
-      ),
-      body: Center(
-        child: CircleAvatar(
-            maxRadius: 110,
-            backgroundImage: NetworkImage(
-              FadeInImage(
-                image: , 
-                placeholder: const AssetImage('assets/jar-loading.gif'),)
+        appBar: AppBar(
+          title: const Text('Stan lee'),
+          actions: [
+            Container(
+              margin: const EdgeInsets.only(right: 5),
+              child: CircleAvatar(
+                backgroundColor: Colors.indigo[900],
+                child: const Text('SL'),
+              ),
             )
-        );
-
-        
-    
+          ],
+        ),
+        body: const Center(
+            child: CircleAvatar(
+          maxRadius: 110,
+          backgroundImage:
+              NetworkImage('https://i.blogs.es/85aa44/stan-lee/840_560.jpg'),
+        )));
   }
 }
